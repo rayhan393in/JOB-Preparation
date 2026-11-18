@@ -1,0 +1,441 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 215 28% 17%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 28% 17%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-navy-900 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-navy-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-navy-200 bg-white px-4 py-2 text-sm font-medium text-navy-700 shadow-sm hover:bg-navy-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .btn-destructive {
+    @apply inline-flex items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md border border-navy-200 bg-transparent px-4 py-2 text-sm font-medium text-navy-700 hover:bg-navy-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-navy-700 hover:bg-navy-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-900 disabled:pointer-events-none disabled:opacity-50 transition-colors;
+  }
+
+  .input-field {
+    @apply flex h-10 w-full rounded-md border border-navy-200 bg-white px-3 py-2 text-sm placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 transition-colors;
+  }
+
+  .label-field {
+    @apply text-sm font-medium text-navy-700 mb-1.5 block;
+  }
+
+  .card-base {
+    @apply rounded-lg border border-navy-200 bg-white text-navy-900 shadow-sm;
+  }
+
+  .card-hover {
+    @apply card-base transition-shadow hover:shadow-md;
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center rounded-full bg-navy-100 px-2.5 py-0.5 text-xs font-medium text-navy-800;
+  }
+
+  .badge-success {
+    @apply inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-800;
+  }
+
+  .badge-danger {
+    @apply inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800;
+  }
+
+  .badge-info {
+    @apply inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-navy-600 transition-colors hover:bg-navy-50 hover:text-navy-900;
+  }
+
+  .sidebar-link-active {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium bg-navy-100 text-navy-900;
+  }
+
+  .table-container {
+    @apply w-full overflow-x-auto;
+  }
+
+  .table-base {
+    @apply w-full caption-bottom text-sm;
+  }
+
+  .table-header {
+    @apply border-b border-navy-200;
+  }
+
+  .table-row {
+    @apply border-b border-navy-100 transition-colors hover:bg-navy-50/50 data-[state=selected]:bg-navy-100;
+  }
+
+  .table-head {
+    @apply h-12 px-4 text-left align-middle font-medium text-navy-500 border-b border-navy-200;
+  }
+
+  .table-cell {
+    @apply p-4 align-middle border-b border-navy-100;
+  }
+
+  .exam-card {
+    @apply card-hover p-5;
+  }
+
+  .stat-card {
+    @apply card-base p-5;
+  }
+
+  .page-header {
+    @apply mb-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-navy-900;
+  }
+
+  .page-description {
+    @apply mt-1 text-navy-500;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-navy-900;
+  }
+
+  .section-subtitle {
+    @apply text-sm text-navy-500;
+  }
+
+  .divider {
+    @apply border-t border-navy-200 my-4;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-in {
+    animation: animate-in 0.3s ease-out;
+  }
+
+  @keyframes animate-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, #102a43 0%, #243b53 100%);
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+  }
+
+  .gradient-amber {
+    background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply bg-navy-900/80 backdrop-blur-md;
+  }
+}
+
+/* Bengali font support */
+@font-face {
+  font-family: 'Hind Siliguri';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/hindsiliguri/v14/5yD7ZPZ_qXjWZrd5OUEVZjsVxKs.woff2) format('woff2');
+  unicode-range: U+0980-09FF, U+0020-007F;
+}
+
+/* Custom scrollbar for exam interface */
+.exam-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.exam-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.exam-scroll::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 4px;
+}
+
+.exam-scroll::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Question navigation grid */
+.question-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 4px;
+}
+
+.question-nav-btn {
+  @apply h-10 w-full rounded-md border-2 text-sm font-medium transition-all;
+}
+
+.question-nav-btn.unanswered {
+  @apply border-navy-200 bg-white text-navy-600 hover:border-navy-300;
+}
+
+.question-nav-btn.answered {
+  @apply border-green-500 bg-green-50 text-green-700;
+}
+
+.question-nav-btn.marked {
+  @apply border-amber-500 bg-amber-50 text-amber-700;
+}
+
+.question-nav-btn.current {
+  @apply border-navy-500 bg-navy-100 text-navy-900 ring-2 ring-navy-500/20;
+}
+
+.question-nav-btn.correct {
+  @apply border-green-500 bg-green-100 text-green-800;
+}
+
+.question-nav-btn.incorrect {
+  @apply border-red-500 bg-red-100 text-red-800;
+}
+
+/* Timer styles */
+.timer-warning {
+  @apply text-amber-600 animate-pulse;
+}
+
+.timer-danger {
+  @apply text-red-600 animate-pulse;
+}
+
+.timer-normal {
+  @apply text-navy-900;
+}
+
+/* Print styles for results */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+  .card-base {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}
+
+/* RTL support for Bengali */
+[dir="rtl"] .sidebar-link {
+  @apply justify-end;
+}
+
+[dir="rtl"] .question-nav-grid {
+  direction: rtl;
+}
+
+/* Animation for exam transitions */
+.exam-question-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.exam-question-exit {
+  animation: slideOutLeft 0.3s ease-in;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-navy-200 rounded;
+}
+
+.skeleton-text {
+  @apply h-4 bg-navy-200 rounded animate-pulse;
+}
+
+.skeleton-title {
+  @apply h-6 w-3/4 bg-navy-200 rounded animate-pulse;
+}
+
+.skeleton-card {
+  @apply h-32 w-full bg-navy-200 rounded-lg animate-pulse;
+}
+
+/* Mobile bottom navigation */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 z-50 border-t border-navy-200 bg-white/95 backdrop-blur-md;
+  }
+  .mobile-bottom-nav-item {
+    @apply flex flex-col items-center gap-1 px-2 py-2 text-xs font-medium text-navy-500 transition-colors;
+  }
+  .mobile-bottom-nav-item.active {
+    @apply text-green-600;
+  }
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-navy-500 ring-offset-2;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
